@@ -1,0 +1,231 @@
+﻿@{var results = ViewBag.lista; }
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<title>Site prova front-end</title>
+
+    @*links efeitos usados*@
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CVarela+Round" rel="stylesheet">
+	<link type="text/css" rel="stylesheet" href="~/css/bootstrap.min.css" />
+	<link type="text/css" rel="stylesheet" href="~/css/owl.carousel.css" />
+	<link type="text/css" rel="stylesheet" href="~/css/owl.theme.default.css" />
+	<link type="text/css" rel="stylesheet" href="~/css/magnific-popup.css" />
+	<link rel="stylesheet" href="~/css/font-awesome.min.css">
+	<link type="text/css" rel="stylesheet" href="~/css/style.css" />
+
+</head>
+
+<body>
+    @*div menu/navbar*@
+    <header id="home">
+
+        <div class="bg-img" style="background-image: url('./images/banner.jpg');">  </div>
+        <nav id="nav" class="navbar nav-transparent">
+            <div class="container">
+                <div class="navbar-header">
+                    <div class="nav-collapse">
+                        <span></span>
+                    </div>
+
+                </div>
+                <ul class="main-nav nav navbar-nav navbar-right">
+                    <li><a href="#" style="font-size: 19px;">Voltar para a página inicial</a></li>
+                </ul>
+            </div>
+        </nav>
+
+    </header>
+
+    <div class="container">
+
+        <div class="row">
+        </div>
+    </div>
+
+    @*div texto atrair atencao cliente*@
+    <div id="features" class="section md-padding bg-grey">
+
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-md-6" style="padding-top: 70px;">
+
+                    <div class="section-header">
+
+                        <h2 class="title">Ouça em qualquer lugar!</h2>
+                    </div>
+                    <p>Já falamos aqui sobre como ouvir uma música em inglês pode ajudar você nos seus estudos do idioma</p>
+                    <div class="feature">
+                        <i class="fa fa-check"></i>
+                        <p>Hoje algumas sugestões que não só fazem praticar um pouco do inglês,mas também tornar as suas viagens muito mais divertidas.</p>
+                    </div>
+                </div>
+
+                <div class="col-sm-4">
+                    <div class="team" style="padding:0px;">
+                        <div class="team-img">
+                            <img class="img-responsive" src="./images/fone.jpg" alt="">
+                            <div class="overlay">
+                                <div class="team-social">
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-content">
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        @*botao link aperte o cinto*@
+        <a href="" style="PADDING-LEFT: 620px;font-size: 37px;">Aperte o cinto e prepare a playlist</a>
+
+
+    </div>
+
+    @*div imagem estrada*@
+    <div id="numbers" class="section sm-padding" style="padding-top: 130px; padding-bottom: 130px;">
+
+        <div class="bg-img" style="background-image: url('./images/deserto.jpg');"> </div>
+
+        <div class="container">
+
+            <div class="row">
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    @*divs listagem api*@
+    <div id="pricing" class="section md-padding">
+
+        <div class="container">
+
+            <div class="row">
+
+                <div id="features" class="section md-padding bg-grey">
+                    <img class="img-responsive" src="./images/car.jpg" alt="" style="padding-left: 460px;margin-top: -231px;margin-bottom: -40px;">
+
+                    <div class="container">
+
+                        <div class="row">
+
+                            <div class="col-md-6">
+
+                                <div class="section-header">
+
+                                    <h2 class="title" style="font-size: 27px;">Para quem está em uma road trip!</h2>
+                                </div>
+                                <p>Musícas perfeitas para aquela viagem de carro com os amigos , em que o destino não é lá o mais importante.</p>
+
+                            </div>
+
+                            <p style="font-size: 27px; float: left;padding-left: 101px; padding-top: 50px;">Let's go get lost!<p>
+
+                                <div class="col-sm-4">
+                                    <div class="team" style=" padding: 0px;width: 279px;">
+                                        <div class="team-img">
+
+                                            <div class="overlay">
+                                                <div class="team-social">
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="team-content">
+
+                                        </div>
+                                    </div>
+                                </div>
+                        </div>
+
+                        <img class="img-responsive" src=ViewBag.lista alt="">
+                        @*foreach que busca os items na view bag result que foi declarada no início da página*@
+                        @foreach (var item in results)
+                        {
+                            <div class="col-sm-4">
+                                <div class="team">
+                                    <div class="team-img">
+                                        <a href=@item.url><img class="img-responsive" style="padding-left: 60px;" src=@item.pic_medium alt=""></a>
+
+                                        <div class="team-social">
+
+                                        </div>
+                                       
+                                    </div>
+                                    <div class="team-content">
+                                        @item.name
+                                        <br>
+
+                                        <p>Total de views:@item.views</p>
+                                        <p>Ranking:@item.rank</p>
+                                        <p>Único:@item.uniques</p>
+                                
+
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        }
+
+
+
+
+            
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+
+
+
+    @*copyright footer*@
+
+    <footer id="footer" class="sm-padding bg-dark">
+
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-12">
+
+                    <div class="footer-copyright">
+                        <p>Design por Lucas Leme de Lau</p>
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+    @*plugins jquery*@
+    <script type="text/javascript" src="~/js/jquery.min.js"></script>
+    <script type="text/javascript" src="~/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="~/js/owl.carousel.min.js"></script>
+    <script type="text/javascript" src="~/js/jquery.magnific-popup.js"></script>
+    <script type="text/javascript" src="~/js/main.js"></script>
+
+</body>
+
+</html>
